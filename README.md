@@ -6,6 +6,11 @@ Often times we have some time-consuming task, and we want to leave it run alone 
 
 This package will offer you a **simplified** experience of sending you email report with customized information.
 
+## Installation
+```bash
+pip install py_reminder
+```
+
 ## Initial configuration
 You will suggest to use a unimportant mail box to receive message, since the password is going to store in plain text. (or if someone knows how to encrypt, please help!)
 
