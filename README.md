@@ -29,34 +29,13 @@ config(address='daveting@example.com',
 
 ## Sample code
 ```python
-from py_reminder import monitor, timer
-
-# Use this if you also want to know the execution time.
-ts = timer()
-
-mt = monitor(task='do something', to='receiver@example.com')
-# You can ignore "to" if you just send to your default email
-
-try:
-  for i in range(5):
-    ts_in = timer()
-    foo()
-    send_email(status='p', timer=ts_in)  # 'p' stands for "progress"
-  send_email(status='c', timer=ts)  # 'c' stands for "complete"
-except:
-  send_email(status='a', timer=ts)  # 'a' stands for "alarm"
-```
-
-## Plan
-In the future, ideally, I want to change this function into a decorator.
-```python
-# "timer" indicates whether to count time
-# The report status will reduce to only two types: "complete" or "alarm".
-@monitor(to='receiver@example.com', task='do something', timer=True)
+from py_reminder import monitor
+# "timer" indicates whether to know the execution time. Default is True.
+# You can ignore "to" if you send to your default receiver.
+@monitor(task='do something', to='receiver@example.com', timer=True)
 def foo()
-  pass
+  time.sleep(10)
   return 0
  
-for i in range(5):
-  foo() 
+foo() 
 ```
