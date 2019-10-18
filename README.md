@@ -59,9 +59,9 @@ And you will see
 
 ## Email Service Provider
 - GMail
-       - I used a new registered account and was banned after one day.
-       - Haven't tested personal account yet.
+    - I used a new registered account and was banned after one day.
+    - Haven't tested personal account yet.
 - Foxmail
-       - I use my personal account and it is all good up to now (two months).
+    - I use my personal account and it is all good up to now (two months).
 
-<u>**Tests on other email vendor are welcome!**</u>
+**Tests on other email vendors are welcome!**
