@@ -16,8 +16,10 @@ from py_reminder import config
 config(address='daveting@example.com',
        passwd='123456',
        smtp='smtp.example.com',
-       port=999)
-# After you run the above code, if you receive a testing email, then the configuration is done. You can never include this line thereafter.
+       port=999,
+       default_to='daveting@example.com')
+# If you receive a testing email, then the configuration is done.
+# You can never include this code thereafter.
 ```
 
 ## Sample code
@@ -27,7 +29,8 @@ from py_reminder import monitor, timer
 # Use this if you also want to know the execution time.
 ts = timer()
 
-mt = monitor(to='receiver@example.com', task='do something')
+mt = monitor(task='do something', to='receiver@example.com')
+# You can ignore "to" if you just send to your default email
 
 try:
   for i in range(5):
