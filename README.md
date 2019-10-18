@@ -1,6 +1,10 @@
 # py_reminder
 This is a Python decorator that can send email for various purpose.
 
+By the way, I am also planning to expand the receiving channels from email to Message, Telegram, Wechat, or even more.
+
+**If you are interested, let's work together!**
+
 ## Introduction
 Often times we have some time-consuming task, and we want to leave it run alone without staring at the screen for 7\*24 hours.
 
