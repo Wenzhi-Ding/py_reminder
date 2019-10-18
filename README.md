@@ -3,7 +3,7 @@ This is a Python decorator that can send email for various purpose.
 
 By the way, I am also planning to expand the receiving channels from email to Message, Telegram, Wechat, or even more.
 
-**If you are interested, let's work together!**
+<u>**If you are interested, let's work together!**</u>
 
 ## Introduction
 Often times we have some time-consuming task, and we want to leave it run alone without staring at the screen for 7\*24 hours.
@@ -57,3 +57,11 @@ And you will see
 
 <img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/sample.png" width="400">
 
+## Email Service Provider
+- GMail
+       - I used a new registered account and was banned after one day.
+       - Haven't tested personal account yet.
+- Foxmail
+       - I use my personal account and it is all good up to now (two months).
+
+<u>**Tests on other email vendor are welcome!**</u>
