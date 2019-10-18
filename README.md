@@ -51,5 +51,5 @@ You can ignore `to` if you send to your default receiver. So the most simple way
 
 And you will see
 
-![1571421632149](sample.png)
+<img src="https://github.com/Wenzhi-Ding/py_reminder/sample.png" width="400">
 
