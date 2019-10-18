@@ -1,0 +1,8 @@
+README.md
+setup.py
+py_reminder/__init__.py
+py_reminder/py_reminder.py
+py_reminder.egg-info/PKG-INFO
+py_reminder.egg-info/SOURCES.txt
+py_reminder.egg-info/dependency_links.txt
+py_reminder.egg-info/top_level.txt

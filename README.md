@@ -1,10 +1,14 @@
 # py_reminder
-This is a Python package that can send email for various purpose.
+This is a Python decorator that can send email for various purpose.
 
 ## Introduction
 Often times we have some time-consuming task, and we want to leave it run alone without staring at the screen for 7\*24 hours.
 
-This package will offer you a **simplified** experience of sending you email report with customized information.
+This package will offer you a **one-line** experience (a function decorator) of sending you email report with customized information.
+
+So that you can catch a coffee break / go dating / play Dota2 without worrying about your machine learning / web-scraping / crazy robot. Because you can always get key update through your cell phone.
+
+This is definitely a easy function, I believe many guys have written their own equivalent one. What I did is to simplify it into a decorator, so it is now even more convenient!
 
 ## Installation
 ```bash
@@ -18,34 +22,34 @@ For the first time, you should specify configuration
 ```python
 from py_reminder import config
 
-config(address='daveting@example.com',
-       passwd='123456',
+config(address='your_email@example.com',
+       password='123456',
        smtp='smtp.example.com',
        port=999,
-       default_to='daveting@example.com')
+       default_to='receiver@example.com')
 ```
+You can ignore `default_to`. It will set to be the same as `address` by default.
+
 If you receive a testing email, then the configuration is done. You can never include this code thereafter.
 
 ## Sample code
 ```python
 from py_reminder import monitor
 
-@monitor(task='do something', to='receiver@example.com', timer=True)
+@monitor(task='do something', to='receiver@example.com')
 def foo()
   time.sleep(10)
   return 0
  
 foo() 
 ```
-"timer" indicates whether to know the execution time. Default is True.
-You can ignore "to" if you send to your default receiver.
+You can ignore `to` if you send to your default receiver. So the most simple way to use this decorator is:
 
-So the most simple and suggested way to use this decorator is:
 ```python
 @monitor('do something')
-def foo()
-  time.sleep(10)
-  return 0
- 
-foo() 
 ```
+
+And you will see
+
+![1571421632149](sample.png)
+
