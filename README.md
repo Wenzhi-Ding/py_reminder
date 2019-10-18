@@ -16,7 +16,7 @@ pip install -U py_reminder
 ```
 
 ## Initial configuration
-**You will suggest to use a unimportant mail box to receive message**, since the password is going to store in plain text. (or if someone knows how to encrypt, please help!)
+**You will suggest to use a unimportant mail box to send messages**, since the password is going to store in plain text. (or if someone knows how to encrypt, please help!)
 
 For the first time, you should specify configuration
 ```python
@@ -38,8 +38,8 @@ from py_reminder import monitor
 
 @monitor(task='do something', to='receiver@example.com')
 def foo()
-  time.sleep(10)
-  return 0
+       time.sleep(10)
+       return 0
  
 foo() 
 ```
