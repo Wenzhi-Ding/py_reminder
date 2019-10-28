@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="py_reminder",
-    version="0.1.0",
+    version="0.1.1",
     author="Wenzhi Ding",
     author_email="wenzhi.ding@foxmail.com",
     description="A decorator for monitoring your task",

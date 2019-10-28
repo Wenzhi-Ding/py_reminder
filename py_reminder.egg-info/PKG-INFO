@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: py-reminder
-Version: 0.1.0
+Version: 0.1.1
 Summary: A decorator for monitoring your task
 Home-page: https://github.com/wenzhi-ding/py_reminder
 Author: Wenzhi Ding
@@ -8,6 +8,10 @@ Author-email: wenzhi.ding@foxmail.com
 License: UNKNOWN
 Description: # py_reminder
         This is a Python decorator that can send email for various purpose.
+        
+        By the way, I am also planning to expand the receiving channels from email to Message, Telegram, Wechat, or even more.
+        
+        <u>**If you are interested, let's work together!**</u>
         
         ## Introduction
         Often times we have some time-consuming task, and we want to leave it run alone without staring at the screen for 7\*24 hours.
@@ -24,7 +28,7 @@ Description: # py_reminder
         ```
         
         ## Initial configuration
-        **You will suggest to use a unimportant mail box to receive message**, since the password is going to store in plain text. (or if someone knows how to encrypt, please help!)
+        **You will suggest to use a unimportant mail box to send messages**, since the password is going to store in plain text. (or if someone knows how to encrypt, please help!)
         
         For the first time, you should specify configuration
         ```python
@@ -46,8 +50,8 @@ Description: # py_reminder
         
         @monitor(task='do something', to='receiver@example.com')
         def foo()
-          time.sleep(10)
-          return 0
+               time.sleep(10)
+               return 0
          
         foo() 
         ```
@@ -59,8 +63,16 @@ Description: # py_reminder
         
         And you will see
         
-        ![1571421632149](sample.png)
+        <img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/sample.png" width="400">
         
+        ## Email Service Provider
+        - GMail
+            - I used a new registered account and was banned after one day.
+            - Haven't tested personal account yet.
+        - Foxmail
+            - I use my personal account and it is all good up to now (two months).
+        
+        **Tests on other email vendors are welcome!**
         
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3

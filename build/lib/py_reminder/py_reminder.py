@@ -39,7 +39,7 @@ def config(address, password, smtp, port, default_to=''):
     CONFIG_PATH = HOME_PATH + '/.config'
     CONFIG = CONFIG_PATH + '/py_reminder.json'
 
-    if CONFIG_PATH not in os.listdir(HOME_PATH):
+    if '.config' not in os.listdir(HOME_PATH):
         os.system('mkdir "%s"' % CONFIG_PATH)
     with open(CONFIG, 'w') as f:
         json.dump({'ADDRESS': address, 'PASSWORD': password, 'SMTP': smtp, 'PORT': port, 'TO': default_to}, f)
