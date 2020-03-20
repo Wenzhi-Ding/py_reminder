@@ -29,7 +29,7 @@ from py_reminder import config
 config(address='your_email@example.com',
        password='123456',
        smtp='smtp.example.com',
-       port=999,
+       port=999,  # currently it should be non-SSL port
        default_to='receiver@example.com')
 ```
 You can ignore `default_to`. It will set to be the same as `address` by default.
@@ -63,5 +63,7 @@ And you will see
     - Haven't tested personal account yet.
 - Foxmail
     - I use my personal account and it is all good up to now (two months).
+- 163
+    - It works. Port should be `25`.
 
 **Tests on other email vendors are welcome!**
