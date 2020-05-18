@@ -10,8 +10,6 @@ Often times we have some time-consuming task, and we want to leave it run alone 
 
 This package will offer you a **one-line** experience (a function decorator) of sending you email report with customized information.
 
-So that you can catch a coffee break / go dating / play Dota2 without worrying about your machine learning / web-scraping / crazy robot. Because you can always get key update through your cell phone.
-
 This is definitely a easy function, I believe many guys have written their own equivalent one. What I did is to simplify it into a decorator, so it is now even more convenient!
 
 ## Installation
@@ -37,29 +35,29 @@ You can ignore `default_to`. It will set to be the same as `address` by default.
 If you receive a testing email, then the configuration is done. You can never include this code thereafter.
 
 ## Sample code
+
 ```python
 from py_reminder import monitor
 
-@monitor(task='do something', to='receiver@example.com')
-def foo()
-       time.sleep(10)
-       return 0
- 
-foo() 
+@monitor('Get Steam Data')  # this is an example
+def foo():
+	return 0
+	
+foo()
 ```
-You can ignore `to` if you send to your default receiver. So the most simple way to use this decorator is:
 
+If you want to specify the receiver:
 ```python
-@monitor('do something')
+@monitor(task='Get Steam Data', to='receiver@example.com')
 ```
 
 And you will see
 
-<img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/sample.png" width="400">
+<img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/assets/image/sample.png" width="400">
 
 For error, you will see
 
-<img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/error_sample.png" width="400">
+<img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/assets/image/error_sample.png" width="400">
 
 ## Email Service Provider
 - GMail
