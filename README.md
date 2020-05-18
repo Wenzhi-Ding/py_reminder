@@ -57,6 +57,10 @@ And you will see
 
 <img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/sample.png" width="400">
 
+For error, you will see
+
+<img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/error_sample.png" width="400">
+
 ## Email Service Provider
 - GMail
     - I used a new registered account and was banned after one day.
