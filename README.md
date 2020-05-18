@@ -53,11 +53,11 @@ If you want to specify the receiver:
 
 And you will see
 
-<img src="./assets/image/sample.png" width="400">
+<img src="./assets/image/sample.png">
 
 For error, you will see
 
-<img src="./assets/image/error_sample.png" width="400">
+<img src="./assets/image/error_sample.png">
 
 ## Email Service Provider
 - GMail
