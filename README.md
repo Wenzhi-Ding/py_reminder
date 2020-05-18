@@ -53,11 +53,11 @@ If you want to specify the receiver:
 
 And you will see
 
-<img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/assets/image/sample.png" width="400">
+<img src="./assets/image/sample.png" width="400">
 
 For error, you will see
 
-<img src="https://github.com/Wenzhi-Ding/py_reminder/blob/master/assets/image/error_sample.png" width="400">
+<img src="./assets/image/error_sample.png" width="400">
 
 ## Email Service Provider
 - GMail
