@@ -30,7 +30,7 @@ def config(address, password, smtp, port, default_to=''):
     smtp: 'smtp.example.com'
     port: 587
         Please refer to your email service provider for 'smtp' and 'port'.
-    defualt_to: 'receiver@example.com'
+    default_to: 'receiver@example.com'
         The default receiving address.
         If you don't specify, it will be the same as 'address'.
     ---------------
