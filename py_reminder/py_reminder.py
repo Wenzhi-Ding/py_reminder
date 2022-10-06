@@ -45,14 +45,14 @@ def config(address, password, smtp, port, default_to=''):
         json.dump({'ADDRESS': address, 'PASSWORD': password, 'SMTP': smtp, 'PORT': port, 'TO': default_to}, f)
     
     try:
-        send_email(time_start=timer(), task='Testing Connection')
+        send_email(task='Testing Connection')
         print("Your configuration works!")
     except:
         print("Your configuration is not working. Please refer to help(config).")
         raise Exception
 
 
-def send_email(time_start, task, error='', to=''):
+def send_email(task, time_start="", error='', to=''):
     HOME_PATH = str(Path.home())
     CONFIG_PATH = HOME_PATH + '/.config'
     CONFIG = CONFIG_PATH + '/py_reminder.json'
@@ -75,7 +75,10 @@ def send_email(time_start, task, error='', to=''):
     else:
         msg['To'] = config['TO']
     
-    common = 'Task: %s\nTime: %s\nMachine: %s\nTime Usage: %.2f mins\nStatus: ' % (task, datetime.now().strftime('%Y-%m-%d %H:%M'), gethostname(), (timer() - time_start) / 60)
+    common = f"Description: {task}\nTime: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\nMachine: {gethostname()}"
+    if time_start: common += f"\nTime Usage: {(timer() - time_start) / 60: .2f} mins"
+    common += "\nStatus: """
+
     if error:
         msg['X-Priority'] = '2'
         message = common + 'Error! Please check! \n\n%s' % (error)
@@ -118,10 +121,10 @@ def monitor(task='Your Task', to=''):
             ts = timer()
             try:
                 value = func(*args, **kwargs)
-                send_email(time_start=ts, task=task, error='', to=to)
+                send_email(task=task, time_start=ts, error='', to=to)
                 return value
             except Exception as e:
                 logger.error(e, exc_info=True)
-                send_email(time_start=ts, task=task, error='%s\n%s\n%s' % sys.exc_info(), to=to)
+                send_email(task=task, time_start=ts, error='%s\n%s\n%s' % sys.exc_info(), to=to)
         return wrapper_decorator
     return decorator

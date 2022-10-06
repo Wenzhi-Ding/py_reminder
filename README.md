@@ -39,7 +39,7 @@ If you receive a testing email, then the configuration is done. You don't have t
 ```python
 from py_reminder import monitor
 
-@monitor('Get Steam Data')  # this is an example
+@monitor('This is a task')
 def foo():
 	return 0
 	
@@ -48,7 +48,13 @@ foo()
 
 If you want to specify the receiver:
 ```python
-@monitor(task='Get Steam Data', to='receiver@example.com')
+@monitor(task='This is a task', to='receiver@example.com')
+```
+
+Another way to use it without decorator:
+```python
+from py_reminder import send_email
+send_email(task="This is a task")
 ```
 
 And you will see:
