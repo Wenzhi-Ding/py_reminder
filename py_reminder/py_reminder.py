@@ -43,7 +43,7 @@ def config(address, password, smtp, port, default_to=''):
         os.system('mkdir "%s"' % CONFIG_PATH)
     with open(CONFIG, 'w') as f:
         json.dump({'ADDRESS': address, 'PASSWORD': password, 'SMTP': smtp, 'PORT': port, 'TO': default_to}, f)
-    
+
     try:
         send_email(task='Testing Connection')
         print("Your configuration works!")
@@ -52,7 +52,7 @@ def config(address, password, smtp, port, default_to=''):
         raise Exception
 
 
-def send_email(task, time_start="", error='', to=''):
+def send_email(task, time_start="",args=None, kwargs=None, error='', to=''):
     HOME_PATH = str(Path.home())
     CONFIG_PATH = HOME_PATH + '/.config'
     CONFIG = CONFIG_PATH + '/py_reminder.json'
@@ -67,17 +67,23 @@ def send_email(task, time_start="", error='', to=''):
     s.starttls()
     s.login(config['ADDRESS'], config['PASSWORD'])
     print(s)
-    
+
     msg = MIMEMultipart()
     msg['From'] = formataddr(['PyReminder', config['ADDRESS']])
     if to:
         msg['To'] = to
     else:
         msg['To'] = config['TO']
-    
-    common = f"Description: {task}\nTime: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\nMachine: {gethostname()}"
-    if time_start: common += f"\nTime Usage: {(timer() - time_start) / 60: .2f} mins"
-    common += "\nStatus: """
+
+    formatted_time = datetime.now().strftime('%Y-%m-%d %H:%M')
+    time_usage = (timer() - time_start) / 60 if time_start else 0
+    common = f"""Task: {task}
+Time: {formatted_time}
+Machine: {gethostname()}
+Time Usage: {time_usage:.2f} mins
+Args: {args if args else '-'}
+Kwargs: {kwargs if kwargs else '-'}
+Status: """
 
     if error:
         msg['X-Priority'] = '2'
@@ -86,7 +92,7 @@ def send_email(task, time_start="", error='', to=''):
     else:
         message = common + 'Complete!'
         msg['Subject'] = '[PyReminder] Completion for %s' % task
-       
+
     msg.attach(MIMEText(message, 'plain'))
     s.send_message(msg)
     del msg
@@ -121,10 +127,10 @@ def monitor(task='Your Task', to=''):
             ts = timer()
             try:
                 value = func(*args, **kwargs)
-                send_email(task=task, time_start=ts, error='', to=to)
+                send_email(task=task, time_start=ts, args=args, kwargs=kwargs, error='', to=to)
                 return value
             except Exception as e:
                 logger.error(e, exc_info=True)
-                send_email(task=task, time_start=ts, error='%s\n%s\n%s' % sys.exc_info(), to=to)
+                send_email(task=task, time_start=ts, args=args, kwargs=kwargs, error='%s\n%s\n%s' % sys.exc_info(), to=to)
         return wrapper_decorator
     return decorator
