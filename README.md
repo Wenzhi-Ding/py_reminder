@@ -14,7 +14,7 @@ This is definitely an easy function, I believe many guys have written their own 
 
 ## Installation
 ```bash
-pip install -U py_reminder
+pip install py_reminder==1.0.1
 ```
 
 ## Initial configuration

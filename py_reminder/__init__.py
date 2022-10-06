@@ -3,7 +3,7 @@ from .py_reminder import *
 
 name = "py_reminder"
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 __doc__ = """
 py_reminder: a simple decorator help you monitor your task progress.
