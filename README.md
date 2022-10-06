@@ -32,7 +32,7 @@ config(address='your_email@example.com',
 ```
 You can ignore `default_to`. It will set to be the same as `address` by default.
 
-If you receive a testing email, then the configuration is done. You don't have to include this code on following runs, but you can use it to change the parameters.
+If you receive a testing email, then the configuration is done.
 
 ## Sample code
 
@@ -59,11 +59,13 @@ send_email(task="This is a task")
 
 And you will see:
 
-<img src="./assets/image/sample1.png">
+<img src="./assets/image/complete.png">
 
 For error, you will see:
 
-<img src="./assets/image/error_sample1.png">
+<img src="./assets/image/err_abstract.png">
+
+<img src="./assets/image/err.png">
 
 ## Email Service Provider
 - GMail
@@ -75,3 +77,5 @@ For error, you will see:
     - It works. Port should be `25`.
 
 **Tests on other email vendors are welcome!**
+
+I have some worked config files. You can simply copy paste it to the `~/.config` then skip the configuration process. If you would like to use the config files, just send email to me.

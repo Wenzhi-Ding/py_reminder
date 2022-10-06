@@ -1,10 +1,10 @@
 [project]
 name = "py_reminder"
-version = "0.1.2"
+version = "1.0.0"
 authors = [
   { name="Wenzhi Ding", email="wenzhi.ding@foxmail.com" },
 ]
-description = "A decorator for monitoring your task"
+description = "A convenient email sender for monitoring your task"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -16,3 +16,6 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/Wenzhi-Ding/py_reminder"
 "Bug Tracker" = "https://github.com/Wenzhi-Ding/py_reminder/issues"
+
+[tool.setuptools]
+packages = ["py_reminder"]
