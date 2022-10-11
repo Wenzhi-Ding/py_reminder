@@ -98,7 +98,7 @@ Status: """
     del msg
 
 
-def monitor(task='Your Task', to=''):
+def monitor(task='Your Task', to='', mute_success=False, disable=False):
     '''
     This is a decorator to monitor the progress/status of your task. 
     Refer to sample code if you don't know how to use decorator.
@@ -127,10 +127,12 @@ def monitor(task='Your Task', to=''):
             ts = timer()
             try:
                 value = func(*args, **kwargs)
-                send_email(task=task, time_start=ts, args=args, kwargs=kwargs, error='', to=to)
+                if not disable and not mute_success: 
+                    send_email(task=task, time_start=ts, args=args, kwargs=kwargs, error='', to=to)
                 return value
             except Exception as e:
                 logger.error(e, exc_info=True)
-                send_email(task=task, time_start=ts, args=args, kwargs=kwargs, error='%s\n%s\n%s' % sys.exc_info(), to=to)
+                if not disable: 
+                    send_email(task=task, time_start=ts, args=args, kwargs=kwargs, error='%s\n%s\n%s' % sys.exc_info(), to=to)
         return wrapper_decorator
     return decorator

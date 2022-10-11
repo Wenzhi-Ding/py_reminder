@@ -1,12 +1,12 @@
 [project]
 name = "py_reminder"
-version = "1.0.1"
+version = "1.0.2"
 authors = [
   { name="Wenzhi Ding", email="wenzhi.ding@foxmail.com" },
 ]
 description = "A convenient email sender for monitoring your task"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.6"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",

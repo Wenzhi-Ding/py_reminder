@@ -14,7 +14,7 @@ This is definitely an easy function, I believe many guys have written their own 
 
 ## Installation
 ```bash
-pip install py_reminder==1.0.1
+pip install py_reminder==1.0.2
 ```
 
 ## Initial configuration
@@ -49,6 +49,17 @@ foo()
 If you want to specify the receiver:
 ```python
 @monitor(task='This is a task', to='receiver@example.com')
+```
+
+If you would like to only send email when error caught:
+```python
+@monitor(task='This is a task', mute_success=True)
+```
+
+If you would like to switch on and off the notification as a whole:
+```python
+arg = True
+@monitor(task='This is a task', disable=arg)
 ```
 
 Another way to use it without decorator:

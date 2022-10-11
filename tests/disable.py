@@ -1,10 +1,10 @@
 from py_reminder import monitor
 
-@monitor('This is a task')
+@monitor('This success should be disabled', disable=True)
 def foo(a=3, b=4):
 	return a + b
 
-@monitor('This is a problematic task')
+@monitor('This error should be disabled', disable=True)
 def err_foo(a=3, b=4):
 	raise Exception('This is an error')
 
